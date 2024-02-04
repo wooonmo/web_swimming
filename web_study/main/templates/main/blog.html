@@ -8,9 +8,9 @@
         {% comment %} <!-- {%%} 내부엔 파이썬이 사용됩니다 --> {% endcomment %}
         <table>
         {% for list in postlist %}
+        {% comment %} 게시글 클릭 시 세부페이지로 {% endcomment %}
             <ul>
-                <li>{{list.postname}}</li>
-                <li>{{list.contents}}</li>
+                <li><a href="{{list.pk}}">{{list.postname}}</a></li>
             </ul>
         {% endfor %}
         </table>
