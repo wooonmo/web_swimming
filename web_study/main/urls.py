@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib import admin
 
 # index는 대문, blog는 게시판, posting은 게시글 상세페이지
-from main.views import index, blog, new_post, posting
+from main.views import index, blog, new_post, posting, remove_post
 
 # 이미지 업로드
 from django.conf.urls.static import static
@@ -23,6 +23,9 @@ urlpatterns = [
     
     # 게시글 작성
     path('blog/new_post/', new_post),
+    
+    # 게시글 삭제
+    path('blog/<int:pk>/remove/', remove_post),
 ]
 
 # 이미지 URL 설정
